@@ -1,3 +1,5 @@
+import type { Situation, Turn } from './Types';
+
 export interface SquareProps {
     id: string;
     value: string;
@@ -5,5 +7,6 @@ export interface SquareProps {
 }
 
 export interface FooterProps {
-    turn: string;
+    turn: Turn;
+    situation: Situation;
 }
