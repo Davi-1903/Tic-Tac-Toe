@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
