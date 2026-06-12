@@ -26,8 +26,8 @@ export default function TicTacToe() {
     useEffect(() => {
         if (situation === 'X WIN' || situation === 'O WIN')
             jsConfetti.addConfetti({
-                confettiColors: ['#000000', '#808080'],
-                confettiNumber: 1000,
+                emojis: ['Ana Clara'],
+                confettiNumber: 10,
             });
     }, [situation]);
 
