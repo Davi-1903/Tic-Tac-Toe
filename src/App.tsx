@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import JSConfetti from 'js-confetti';
 import Header from './components/Header';
 import Square from './components/Square';
 import Footer from './components/Footer';
@@ -8,6 +9,7 @@ import type { Turn } from './interfaces/Types';
 export default function TicTacToe() {
     const [game, setGame] = useState(['', '', '', '', '', '', '', '', '']);
     const [turn, setTurn] = useState<Turn>('X');
+    const jsConfetti = new JSConfetti();
     const situation = checkState(game);
 
     function changeTurn(): void {
@@ -20,6 +22,14 @@ export default function TicTacToe() {
         setGame(prev => prev.map((item, idx) => (idx === +id ? turn : item)));
         changeTurn();
     }
+
+    useEffect(() => {
+        if (situation === 'X WIN' || situation === 'O WIN')
+            jsConfetti.addConfetti({
+                confettiColors: ['#000000', '#808080'],
+                confettiNumber: 1000,
+            });
+    }, [situation]);
 
     return (
         <div className='wrapper'>

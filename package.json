@@ -11,6 +11,7 @@
         "preview": "rsbuild preview"
     },
     "dependencies": {
+        "js-confetti": "^0.13.1",
         "react": "^19.2.7",
         "react-dom": "^19.2.7"
     },
